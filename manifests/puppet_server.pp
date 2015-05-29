@@ -38,7 +38,7 @@ class profiles::puppet_server {
   class { 'puppet::master':
     storeconfigs    => true,
     environments    => 'directory',
-    environmentpath => '/etc/puppet/environments'
+    environmentpath => '/etc/puppet/environments',
     hiera_config    => '$environmentpath/$environment/hiera.yaml',
   }
 
