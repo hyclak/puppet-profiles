@@ -34,8 +34,6 @@ class profiles::puppet_server {
     remote => $r10k_remote,
   }
 
-  class { '::puppetdb': }
-
   class { 'puppet::master':
     storeconfigs    => true,
     environments    => 'directory',
@@ -57,5 +55,10 @@ class profiles::puppet_server {
       action => 'accept',
       proto  => 'tcp',
       dport  => '8140',
+    '201 PuppetDB':
+      ensure => present,
+      action => 'accept',
+      proto  => 'tcp',
+      dport  => '8081',
   }
 }
