@@ -55,6 +55,9 @@ class profiles::puppet_server {
       action => 'accept',
       proto  => 'tcp',
       dport  => '8140',
+  }
+
+  firewall {
     '201 PuppetDB':
       ensure => present,
       action => 'accept',
