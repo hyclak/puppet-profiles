@@ -34,6 +34,8 @@ class profiles::puppet_server {
     remote => $r10k_remote,
   }
 
+  class { '::puppetdb': }
+
   class { 'puppet::master':
     storeconfigs    => true,
     environments    => 'directory',
