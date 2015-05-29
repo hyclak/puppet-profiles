@@ -43,6 +43,8 @@ class profiles::puppet_server {
   class { '::puppetdb':
     ssl_listen_address => '0.0.0.0'
   }
+  
+  class { '::puppetdb::master::config': }
 
   ini_setting { 'basemodulepath':
     ensure  => present,
