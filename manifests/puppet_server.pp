@@ -25,7 +25,6 @@ class profiles::puppet_server {
   include profiles::base
   include stdlib
   include firewall
-  include puppetdb
 
   # Validate our data
   
@@ -39,6 +38,10 @@ class profiles::puppet_server {
     environments    => 'directory',
     environmentpath => '/etc/puppet/environments',
     hiera_config    => '$environmentpath/$environment/hiera.yaml',
+  }
+
+  class { '::puppetdb':
+    ssl_listen_address => '0.0.0.0'
   }
 
   ini_setting { 'basemodulepath':
