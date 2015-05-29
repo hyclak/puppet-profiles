@@ -33,7 +33,7 @@ class profiles::base {
   include ::firewall
 
   # NFS Client configuration
-  include nfs::client
+  #include nfs::client
   # rpcgssd service? Verify ipa-client-automount doesn't do that
   
   # Sudoers
