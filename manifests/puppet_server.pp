@@ -24,7 +24,6 @@ class profiles::puppet_server {
 
   include profiles::base
   include stdlib
-  include inifile
   include firewall
   include puppetdb
 
