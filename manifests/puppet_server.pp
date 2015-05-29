@@ -44,7 +44,7 @@ class profiles::puppet_server {
     ssl_listen_address => '0.0.0.0'
   }
   
-  class { '::puppetdb::master::config': }
+  include '::puppetdb::master::config'
 
   ini_setting { 'basemodulepath':
     ensure  => present,
