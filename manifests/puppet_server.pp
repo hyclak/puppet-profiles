@@ -42,7 +42,7 @@ class profiles::puppet_server {
 
   selboolean { 'passenger_can_connect_all':
     persistent => true,
-    value      => true,
+    value      => 'on',
   }
 
   class { '::puppetdb':
