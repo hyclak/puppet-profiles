@@ -40,6 +40,11 @@ class profiles::puppet_server {
     hiera_config    => '$environmentpath/$environment/hiera.yaml',
   }
 
+  selboolean { 'passenger_can_connect_all':
+    persistent => true,
+    value      => true,
+  }
+
   class { '::puppetdb':
     ssl_listen_address => '0.0.0.0'
   }
