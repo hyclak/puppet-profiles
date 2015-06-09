@@ -37,7 +37,6 @@ class profiles::puppet_server {
     storeconfigs    => true,
     environments    => 'directory',
     environmentpath => '/etc/puppet/environments',
-    hiera_config    => '$environmentpath/$environment/hiera.yaml',
   }
 
   selboolean { 'passenger_can_connect_all':
