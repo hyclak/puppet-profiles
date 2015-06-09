@@ -37,6 +37,7 @@ class profiles::puppet_server {
     storeconfigs    => true,
     environments    => 'directory',
     environmentpath => '/etc/puppet/environments',
+    reports         => 'store, foreman',
   }
 
   selboolean { 'passenger_can_connect_all':
