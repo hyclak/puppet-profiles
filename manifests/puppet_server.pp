@@ -73,4 +73,12 @@ class profiles::puppet_server {
       proto  => 'tcp',
       dport  => '8081',
   }
+
+  firewall {
+    '202 Katello Capsule':
+      ensure => present,
+      action => 'accept',
+      proto  => 'tcp',
+      dport  => '9090',
+  }
 }
